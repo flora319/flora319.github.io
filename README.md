@@ -11,8 +11,7 @@ This site introduces my experience, projects, skills, education, and places I ha
 
 ## Features
 
-- **Traditional Chinese colour palette:** 黛蓝 dài lán, 天水碧 tiān shuǐ bì, 海棠红 hǎi táng hóng, 胭脂 yān zhī,
-  月白 yuè bái, and 藕荷 ǒu hé, defined once as CSS variables
+- **Traditional Soft colour palette:** 
 - **Dark mode:** a toggle button that remembers your choice and follows your system setting on a first visit
 - **Projects from a JavaScript array:** two projects at first, with a Load More button for the rest
 - **Places Travelled:** click a destination card to move the embedded Google map there
