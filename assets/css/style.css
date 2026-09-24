@@ -1,3 +1,12 @@
+/* ===== Theme colours (Activity 3) =====
+   Glazed blue (釉蓝, #1781B5). Change these four values to re-theme the whole site. */
+:root {
+  --theme-main: #1781b5;    /* glazed blue: section header bars, name highlight */
+  --theme-dark: #0f6a96;    /* darker blue: text, links, hover underline (better contrast on white) */
+  --theme-medium: #5fa8d3;  /* lighter blue: intro background */
+  --theme-light: #d6ecf7;   /* pale blue: typing text on the intro */
+}
+
 .profile-pic {
   position: relative;
   max-width:130px;
@@ -11,7 +20,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(0, 77, 64, 0.4); 
+  border: 6px solid rgba(23, 129, 181, 0.4); 
   border-radius: 50% !important;
 }
 
@@ -85,7 +94,7 @@
   position: relative;
   padding: 11px 35px;
   background: #fff;
-  color: #00796b;
+  color: var(--theme-dark);
   border: 2px solid #fff;
   font-weight: 600;
   font-size: 15px;
@@ -116,7 +125,7 @@
 }
 
 .contactme:hover{
-  color: #00796b;
+  color: var(--theme-dark);
   background-color: white;
 }
 /* main body */
@@ -140,7 +149,7 @@ body {
 } */
 
 a {
-  color: #004d40;
+  color: var(--theme-dark);
 }
 
 /* main blockqoute */
@@ -320,7 +329,7 @@ h3 {
 } */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  background: var(--theme-medium);
   position: relative;
 }
 
@@ -351,7 +360,7 @@ h3 {
   border-bottom: 5px solid #24305e;
 }
 
-#intro.section .teal {
+#intro.section .theme {
   padding: 0 10px;
 }
 
@@ -473,7 +482,7 @@ a.hoverline {
 } */
 
 a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
+  border-bottom: 3px solid var(--theme-dark) !important;
 }
 
 #skills .card.large {
@@ -546,20 +555,20 @@ small {
   color: #666 !important;
 }
 
-/* main .teal-text */
+/* main .theme-text */
 
-.teal-text {
-  color: #008073 !important;
+.theme-text {
+  color: var(--theme-dark) !important;
 }
 
 /* .teal-text {
   color: #0b5e86 !important;
 } */
 
-/* .teal */
+/* .theme */
 
-.teal {
-  background-color: #008073 !important;
+.theme {
+  background-color: var(--theme-main) !important;
 }
 
 /* .teal {
@@ -602,7 +611,7 @@ small {
     position: absolute;
   }
   nav a.button-collapse, nav a.button-collapse i {
-    color: #009688;
+    color: var(--theme-dark);
     height: 56px;
     line-height: 56px;
   }
