@@ -810,3 +810,11 @@ small {
   height: 450px;
   border: 0;
 }
+
+
+/* ===== Projects Load More button (Activity 5) ===== */
+/* Materialize buttons turn teal on hover/focus; keep them on theme */
+#load-more-btn:hover,
+#load-more-btn:focus {
+  background-color: var(--theme-dark) !important;
+}
