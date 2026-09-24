@@ -1,0 +1,115 @@
+/* =====================================================================
+   Activity 6: Dark mode
+   theme-toggle.js sets <html data-theme="dark">.
+   Every rule here starts with html[data-theme="dark"], so it only
+   applies while dark mode is on. Light mode is untouched.
+   ===================================================================== */
+
+/* 1. Swap the theme variables. Rules that use var(--...) update automatically. */
+html[data-theme="dark"] {
+  --theme-main: #56688a;    /* 黛蓝, lifted so white text still reads on it */
+  --theme-dark: #a9d6de;    /* light jade: text and links on dark backgrounds */
+  --theme-light: #2f3d52;   /* dark tint: selected travel card */
+  --blush: #3a2b3a;         /* dusky pink: intro gradient, photo ring */
+  --paper: #1b1e29;         /* ink night: page background */
+  color-scheme: dark;       /* dark scrollbars */
+}
+
+/* 2. Parts that used fixed colours (white cards, white sidebar, grey text) */
+html[data-theme="dark"] body {
+  background-color: #1b1e29;
+  color: #e7e9ef;
+}
+
+html[data-theme="dark"] nav,
+html[data-theme="dark"] .side-nav,
+html[data-theme="dark"] ul.side-nav.fixed li.logo,
+html[data-theme="dark"] ul.table-of-contents li:not(.logo) a.active,
+html[data-theme="dark"] ul.table-of-contents li:not(.logo) a:hover {
+  background-color: #252938;
+}
+
+html[data-theme="dark"] ul.side-nav.fixed.table-of-contents li:not(.logo) a span,
+html[data-theme="dark"] ul#slide-out li:not(.logo) a span,
+html[data-theme="dark"] .name-title .black-text {
+  color: #e7e9ef !important;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .place-card,
+html[data-theme="dark"] .place-card:focus {
+  background-color: #252938;
+  color: #e7e9ef;
+}
+
+html[data-theme="dark"] .place-card.active {
+  background-color: var(--theme-light);
+}
+
+html[data-theme="dark"] .card .card-action,
+html[data-theme="dark"] #experience .card-action {
+  background-color: #2c3143;
+  border-top: 1px solid #3a4056;
+}
+
+html[data-theme="dark"] .grey-text,
+html[data-theme="dark"] .card-action span,
+html[data-theme="dark"] .places-intro,
+html[data-theme="dark"] .place-note {
+  color: #a8afbf !important;
+}
+
+/* Materialize's brown text is unreadable on dark: use 藕荷 lotus pink */
+html[data-theme="dark"] .brown-text {
+  color: #e4c6d0 !important;
+}
+
+html[data-theme="dark"] #intro .typing {
+  color: #e4c6d0 !important;
+}
+
+html[data-theme="dark"] #skills h4 {
+  border-bottom-color: #3a4056;
+}
+
+html[data-theme="dark"] .github {
+  color: #e7e9ef;
+}
+
+/* The hover colour is a light jade in dark mode, too pale behind white text */
+html[data-theme="dark"] #load-more-btn:hover,
+html[data-theme="dark"] #load-more-btn:focus {
+  background-color: #637798 !important;
+}
+
+/* Soften the bright map a little */
+html[data-theme="dark"] .map-wrapper iframe {
+  filter: brightness(0.85);
+}
+
+/* 3. The floating light/dark switch (visible in both modes) */
+.theme-toggle {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1000;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--theme-main);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(-20deg) scale(1.08);
+}
+
+/* Materialize turns focused buttons teal; keep ours on theme */
+.theme-toggle:focus {
+  background-color: var(--theme-main);
+}

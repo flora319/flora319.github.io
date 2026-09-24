@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+  <!-- Activity 6 (dark mode): choose the theme BEFORE the page appears,
+       so dark-mode visitors don't see a white flash. Uses the saved choice,
+       otherwise the computer's own light/dark setting. -->
+  <script>
+    (function () {
+      var theme = "light";
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        theme = saved || (prefersDark ? "dark" : "light");
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
 
   <!-- Materialize - Compiled and minified CSS-->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
@@ -13,6 +28,8 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- Activity 6: dark mode styles (loaded after style.css so they win) -->
+  <link rel="stylesheet" href="/assets/css/dark-mode.css" />
   <title>Flora Xuan | Portfolio</title>
 
   <!-- Open Graph (link previews when the URL is shared) -->
@@ -38,7 +55,7 @@
   <link rel="manifest" href="/assets/img/favicon/manifest.json" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#1781b5" />
+  <meta name="theme-color" content="#425066" />
   <meta name="robots" content="index, follow" />
 </head>
 
@@ -172,6 +189,11 @@
       </li>
     </ul>
   </nav>
+
+  <!-- Activity 6: floating light/dark mode switch -->
+  <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+    <i class="fa fa-moon-o" aria-hidden="true"></i>
+  </button>
 
   <!-- Main Content-->
   <main>
@@ -438,6 +460,9 @@
       })
     })
   </script>
+  <!-- Dark mode toggle (Activity 6) -->
+  <script src="/assets/js/theme-toggle.js"></script>
+
   <!-- Projects rendered from a JavaScript array (Activity 5) -->
   <script src="/assets/js/projects.js"></script>
 

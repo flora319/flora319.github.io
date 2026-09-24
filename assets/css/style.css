@@ -1,10 +1,15 @@
-/* ===== Theme colours (Activity 3) =====
-   Glazed blue (釉蓝, #1781B5). Change these four values to re-theme the whole site. */
+/* ===== Theme colours =====
+   Activity 3: every theme colour lives in these variables.
+   Activity 6: refreshed with traditional Chinese colours (中国传统色). */
 :root {
-  --theme-main: #1781b5;    /* glazed blue: section header bars, name highlight */
-  --theme-dark: #0f6a96;    /* darker blue: text, links, hover underline (better contrast on white) */
-  --theme-medium: #5fa8d3;  /* lighter blue: intro background */
-  --theme-light: #d6ecf7;   /* pale blue: typing text on the intro */
+  --theme-main: #425066;    /* 黛蓝 dài lán, brow-ink blue: header bars, buttons */
+  --theme-dark: #333e50;    /* deeper 黛蓝: text, links, hover */
+  --theme-medium: #5aa4ae;  /* 天水碧 tiān shuǐ bì, sky-water jade: header gradient */
+  --theme-light: #d6ecf0;   /* 月白 yuè bái, moon white: soft backgrounds */
+  --accent: #db5a6b;        /* 海棠红 hǎi táng hóng, crabapple red: lively details */
+  --accent-dark: #9d2933;   /* 胭脂 yān zhī, rouge: name highlight, typing text */
+  --blush: #e4c6d0;         /* 藕荷 ǒu hé, lotus-root pink: intro, photo ring */
+  --paper: #fffbf0;         /* 象牙白 xiàng yá bái, ivory: page background */
 }
 
 .profile-pic {
@@ -20,7 +25,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(23, 129, 181, 0.4); 
+  border: 6px solid var(--blush); 
   border-radius: 50% !important;
 }
 
@@ -93,9 +98,9 @@
 .readme {
   position: relative;
   padding: 11px 35px;
-  background: #fff;
-  color: var(--theme-dark);
-  border: 2px solid #fff;
+  background: var(--theme-main);
+  color: #fff;
+  border: 2px solid var(--theme-main);
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
@@ -113,8 +118,8 @@
   position: relative;
   padding: 11px 35px;
   background: none;
-  color: #fff;
-  border: 2px solid #fff;
+  color: var(--theme-dark);
+  border: 2px solid var(--theme-dark);
   font-weight: 600;
   font-size: 15px;
   letter-spacing: 1px;
@@ -125,8 +130,8 @@
 }
 
 .contactme:hover{
-  color: var(--theme-dark);
-  background-color: white;
+  color: #fff;
+  background-color: var(--theme-main);
 }
 /* main body */
 
@@ -209,7 +214,7 @@ nav i {
 } */
 
 main {
-  background: url(../../assets/img/bg.png) repeat;
+  background: var(--paper);
   padding-left: 190px;
 }
 
@@ -280,7 +285,7 @@ ul.side-nav.fixed li.logo a {
 
 ul.table-of-contents li:not(.logo) a.active, ul.table-of-contents li:not(.logo) a:hover {
   background-color: #fafafa;
-  border-left: 3px solid;
+  border-left: 3px solid var(--accent);
 }
 
 ul.side-nav.fixed.table-of-contents li:not(.logo) a span, ul#slide-out li:not(.logo) a span {
@@ -329,12 +334,13 @@ h3 {
 } */
 
 #intro.section {
-  background: var(--theme-medium);
+  /* ivory -> lotus pink -> moon white */
+  background: linear-gradient(135deg, var(--paper) 0%, var(--blush) 60%, var(--theme-light) 100%);
   position: relative;
 }
 
 #intro.section .container {
-  color: white;
+  color: var(--theme-dark);
   font-weight: 200;
   left: 0;
   position: absolute;
@@ -345,7 +351,7 @@ h3 {
   font-weight: 300;
   line-height: 150%;
   padding: 0 30px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: none;
 } */
 
 #intro.section .container *:not(span) {
@@ -362,10 +368,22 @@ h3 {
 
 #intro.section .theme {
   padding: 0 10px;
+  background-color: var(--accent-dark) !important;  /* 胭脂 box behind the name */
+  color: #fff;
+  border-radius: 6px;
+}
+
+/* The HTML has inline style="color:..." on these; !important in CSS beats inline styles */
+#intro h5 {
+  color: var(--theme-dark) !important;
+}
+
+#intro .typing {
+  color: var(--accent-dark) !important;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: transparent;  /* was a dark tint; the new intro is light */
   height: 100%;
   left: 0;
   position: absolute;
@@ -482,7 +500,13 @@ a.hoverline {
 } */
 
 a.hoverline:hover {
-  border-bottom: 3px solid var(--theme-dark) !important;
+  border-bottom: 3px solid var(--accent) !important;
+}
+
+/* Section header bars: brow-ink blue fading into sky-water jade, with a crabapple edge */
+h3.page-title {
+  background-image: linear-gradient(90deg, var(--theme-main) 45%, var(--theme-medium) 100%);
+  border-left: 6px solid var(--accent);
 }
 
 #skills .card.large {
