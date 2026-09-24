@@ -701,3 +701,112 @@ small {
     background-position-x: 30%;
   }
 }
+
+/* ===== Places Travelled (Activity 4) ===== */
+
+.places-intro {
+  text-align: center;
+  color: #555;
+}
+
+.places-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 10px 0 25px;
+}
+
+.stat {
+  background: var(--theme-main);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 24px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* Cards wrap automatically: as many 140px+ columns as fit */
+.place-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+.place-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 10px;
+  background-color: #fff;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font: inherit;
+  color: #333;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Materialize gives focused buttons a teal background; keep ours white */
+.place-card:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+/* Visible outline for keyboard users (Tab key) */
+.place-card:focus-visible {
+  outline: 3px solid var(--theme-dark);
+  outline-offset: 2px;
+}
+
+.place-card.active,
+.place-card.active:focus {
+  border-color: var(--theme-main);
+  background-color: var(--theme-light);
+}
+
+.place-flag {
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.place-name {
+  font-weight: 600;
+  color: var(--theme-dark);
+}
+
+.place-note {
+  font-size: 14px;
+  color: #666;
+}
+
+.map-label {
+  margin-bottom: 8px;
+}
+
+.map-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: 0;
+}

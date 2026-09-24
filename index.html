@@ -93,6 +93,11 @@
       </li>
 
       <li class="bold">
+        <a aria-label="Navigate to the Places Travelled section" href="#places" class="waves-effect waves-dark theme-text"><i
+            class="mdi-maps-place small"></i><span>Places Travelled</span></a>
+      </li>
+
+      <li class="bold">
         <!-- 
         1. mdi-communication-contacts
         2. mdi-content-mail
@@ -151,6 +156,10 @@
       <li class="bold">
         <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark theme-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
+      </li>
+      <li class="bold">
+        <a aria-label="Navigate to the Places Travelled section" href="#places" class="waves-effect waves-dark theme-text"><i
+            class="mdi-maps-place small"></i><span>Places Travelled</span></a>
       </li>
       <li class="bold">
         <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark theme-text"><i
@@ -361,6 +370,65 @@
       </div>
     </section>
 
+    <!-- Places Travelled Section (Activity 4) -->
+    <section id="places" class="section scrollspy">
+      <h3 class="page-title white-text theme">Places Travelled</h3>
+      <div class="container">
+        <p class="places-intro">A few places I have explored so far. Click a card to see it on the map.</p>
+
+        <div class="places-stats">
+          <div class="stat"><span class="stat-number">6</span>places</div>
+          <div class="stat"><span class="stat-number">4</span>continents</div>
+        </div>
+
+        <div class="place-grid">
+          <button type="button" class="place-card active" aria-pressed="true"
+            data-name="France" data-query="France" data-zoom="5">
+            <span class="place-flag" aria-hidden="true">🇫🇷</span>
+            <span class="place-name">France</span>
+            <span class="place-note">Europe</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Spain" data-query="Spain" data-zoom="5">
+            <span class="place-flag" aria-hidden="true">🇪🇸</span>
+            <span class="place-name">Spain</span>
+            <span class="place-note">Europe</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Costa Rica" data-query="Costa Rica" data-zoom="7">
+            <span class="place-flag" aria-hidden="true">🇨🇷</span>
+            <span class="place-name">Costa Rica</span>
+            <span class="place-note">Central America</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Alaska" data-query="Alaska, USA" data-zoom="4">
+            <span class="place-flag" aria-hidden="true">🇺🇸</span>
+            <span class="place-name">Alaska</span>
+            <span class="place-note">North America</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Japan" data-query="Japan" data-zoom="5">
+            <span class="place-flag" aria-hidden="true">🇯🇵</span>
+            <span class="place-name">Japan</span>
+            <span class="place-note">Asia</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="New Zealand" data-query="New Zealand" data-zoom="5">
+            <span class="place-flag" aria-hidden="true">🇳🇿</span>
+            <span class="place-name">New Zealand</span>
+            <span class="place-note">Oceania</span>
+          </button>
+        </div>
+
+        <p class="map-label">Currently showing: <b id="map-label">France</b></p>
+        <div class="map-wrapper">
+          <iframe id="places-map" title="Google map of places I have travelled"
+            src="https://www.google.com/maps?q=France&amp;z=5&amp;output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- Eight Section: Contact -->
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text theme">Contact</h3>
@@ -413,6 +481,8 @@
       })
     })
   </script>
+  <!-- Places Travelled map switcher (Activity 4) -->
+  <script src="/assets/js/places.js"></script>
 </body>
 
 </html>
