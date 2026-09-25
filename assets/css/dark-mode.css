@@ -7,15 +7,14 @@
 
 /* 1. Swap the variables. Every rule that uses var(--...) updates automatically. */
 html[data-theme="dark"] {
-  --theme-main: #5d6b94;    /* slate blue, lifted so white text still reads on it */
-  --theme-dark: #c3cdea;    /* light periwinkle: text and links on dark backgrounds */
-  --theme-light: #2e3450;   /* dark tint: tags, selected travel card */
-  --theme-hover: #6b7aa6;   /* hover colour for solid buttons */
-  --blush: #3a2b3a;         /* dusky rose: intro gradient, photo ring */
+  --theme-main: #56688a;    /* ink blue, lifted so white text still reads on it */
+  --theme-dark: #a9d6de;    /* light jade: text and links on dark backgrounds */
+  --theme-light: #2f3d52;   /* dark tint: tags, selected travel card, end of the intro gradient */
+  --theme-hover: #637798;   /* hover colour for solid buttons */
+  --blush: #3a2b3a;         /* dusky pink: intro gradient, photo ring */
   --name-bg: #b8434f;       /* box behind the name */
-  --sage-mist: #1f3431;     /* deep sage: where the intro gradient ends */
-  --paper: #1a1c26;         /* night: page background */
-  --accent-text: #efc9d2;   /* soft pink: accent text on dark */
+  --paper: #1b1e29;         /* ink night: page background */
+  --accent-text: #e4c6d0;   /* soft pink: accent text on dark */
 
   --surface: #252938;       /* cards, sidebar */
   --surface-2: #2c3143;     /* card footers */

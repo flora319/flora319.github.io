@@ -1,25 +1,24 @@
 /* ===== Theme colours =====
    Every theme colour lives in these variables (dark-mode.css swaps them).
-   A soft palette: slate blue and sage, with rose-red accents, on warm white. */
+   Ink blue and jade, with rose accents, on ivory. */
 :root {
-  --theme-main: #46557a;    /* slate blue: header bars, buttons */
-  --theme-dark: #33405f;    /* deep slate: text, links, hover */
-  --theme-medium: #8fb3a8;  /* sage: header gradient */
-  --theme-light: #e7ecf6;   /* mist: tags, soft backgrounds */
-  --accent: #db5a6b;        /* rose: borders and small details */
+  --theme-main: #425066;    /* ink blue: header bars, buttons */
+  --theme-dark: #333e50;    /* deeper ink blue: text, links, hover */
+  --theme-medium: #5aa4ae;  /* jade: header gradient */
+  --theme-light: #d6ecf0;   /* pale blue-green: soft backgrounds, end of the intro gradient */
+  --accent: #db5a6b;        /* rose: lively details */
   --accent-dark: #9d2933;   /* deep rose: typing text */
   --name-bg: #c45a68;       /* soft rose: box behind the name */
-  --sage-mist: #dcebe6;     /* soft sage: where the intro gradient ends */
-  --blush: #f1e2e7;         /* soft pink: intro, photo ring */
-  --paper: #faf9f6;         /* warm white: page background */
+  --blush: #e4c6d0;         /* pink: intro, photo ring */
+  --paper: #fffbf0;         /* ivory: page background */
 
   /* Neutral colours for cards, text and borders */
   --surface: #ffffff;       /* cards, sidebar */
-  --surface-2: #faf6f4;     /* card footers, sidebar photo area */
-  --border: #ebe3e0;
-  --text: #2e3345;
-  --text-muted: #5d6275;
-  --theme-hover: #33405f;   /* hover colour for solid slate buttons */
+  --surface-2: #faf6ee;     /* card footers, sidebar photo area */
+  --border: #e8e1d3;
+  --text: #2f3542;
+  --text-muted: #5f6673;
+  --theme-hover: #333e50;   /* hover colour for solid ink-blue buttons */
   --accent-text: #9d2933;   /* accent-coloured text */
 }
 
@@ -346,8 +345,8 @@ h3 {
 
 #intro.section {
   /* ivory -> lotus pink -> moon white */
-  /* Pink in the top-left corner fading through warm white into sage, so the screen is never all pink */
-  background: linear-gradient(135deg, var(--blush) 0%, var(--paper) 45%, var(--sage-mist) 100%);
+  /* Pink in the top-left corner fading through ivory into pale blue-green, so the screen is never all pink */
+  background: linear-gradient(135deg, var(--blush) 0%, var(--paper) 45%, var(--theme-light) 100%);
   position: relative;
 }
 

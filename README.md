@@ -11,7 +11,7 @@ This site introduces my experience, projects, skills, education, and places I ha
 
 ## Features
 
-- **Soft colour palette:** slate blue and sage with rose-red accents, defined once as CSS variables
+- **Soft colour palette:** ink blue and jade with rose accents, defined once as CSS variables
 - **Dark mode:** a toggle that remembers your choice and follows your system setting on a first visit
 - **Projects from a JavaScript array:** Load More, filters by area (AI / ML, Software, Hardware & Embedded),
   live search, clickable skill tags, and expandable details
