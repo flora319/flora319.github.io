@@ -1,24 +1,26 @@
 /* ===== Theme colours =====
-   Activity 3: every theme colour lives in these variables.
-   Activity 6: refreshed with traditional Chinese colours (中国传统色). */
+   Every theme colour lives in these variables (dark-mode.css swaps them).
+   A soft palette: slate blue and sage, with rose-red accents, on warm white. */
 :root {
-  --theme-main: #425066;    /* 黛蓝 dài lán, brow-ink blue: header bars, buttons */
-  --theme-dark: #333e50;    /* deeper 黛蓝: text, links, hover */
-  --theme-medium: #5aa4ae;  /* 天水碧 tiān shuǐ bì, sky-water jade: header gradient */
-  --theme-light: #d6ecf0;   /* 月白 yuè bái, moon white: soft backgrounds */
-  --accent: #db5a6b;        /* 海棠红 hǎi táng hóng, crabapple red: lively details */
-  --accent-dark: #9d2933;   /* 胭脂 yān zhī, rouge: name highlight, typing text */
-  --blush: #e4c6d0;         /* 藕荷 ǒu hé, lotus-root pink: intro, photo ring */
-  --paper: #fffbf0;         /* 象牙白 xiàng yá bái, ivory: page background */
+  --theme-main: #46557a;    /* slate blue: header bars, buttons */
+  --theme-dark: #33405f;    /* deep slate: text, links, hover */
+  --theme-medium: #8fb3a8;  /* sage: header gradient */
+  --theme-light: #e7ecf6;   /* mist: tags, soft backgrounds */
+  --accent: #db5a6b;        /* rose: borders and small details */
+  --accent-dark: #9d2933;   /* deep rose: typing text */
+  --name-bg: #c45a68;       /* soft rose: box behind the name */
+  --sage-mist: #dcebe6;     /* soft sage: where the intro gradient ends */
+  --blush: #f1e2e7;         /* soft pink: intro, photo ring */
+  --paper: #faf9f6;         /* warm white: page background */
 
-  /* Neutral colours for cards, text and borders (dark-mode.css swaps these too) */
+  /* Neutral colours for cards, text and borders */
   --surface: #ffffff;       /* cards, sidebar */
-  --surface-2: #faf6ee;     /* card footers, sidebar photo area */
-  --border: #e8e1d3;
-  --text: #2f3542;
-  --text-muted: #5f6673;
-  --theme-hover: #333e50;   /* hover colour for solid 黛蓝 buttons */
-  --accent-text: #9d2933;   /* accent-coloured text (胭脂 in light mode) */
+  --surface-2: #faf6f4;     /* card footers, sidebar photo area */
+  --border: #ebe3e0;
+  --text: #2e3345;
+  --text-muted: #5d6275;
+  --theme-hover: #33405f;   /* hover colour for solid slate buttons */
+  --accent-text: #9d2933;   /* accent-coloured text */
 }
 
 .profile-pic {
@@ -344,7 +346,8 @@ h3 {
 
 #intro.section {
   /* ivory -> lotus pink -> moon white */
-  background: linear-gradient(135deg, var(--paper) 0%, var(--blush) 60%, var(--theme-light) 100%);
+  /* Pink in the top-left corner fading through warm white into sage, so the screen is never all pink */
+  background: linear-gradient(135deg, var(--blush) 0%, var(--paper) 45%, var(--sage-mist) 100%);
   position: relative;
 }
 
@@ -377,7 +380,7 @@ h3 {
 
 #intro.section .theme {
   padding: 0 10px;
-  background-color: var(--accent-dark) !important;  /* 胭脂 box behind the name */
+  background-color: var(--name-bg) !important;
   color: #fff;
   border-radius: 6px;
 }
@@ -765,10 +768,10 @@ small {
   font-weight: 600;
 }
 
-/* Cards wrap automatically: as many 140px+ columns as fit */
+/* Cards wrap automatically: as many 140px+ columns as fit, at most 5 per row */
 .place-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(140px, calc((100% - 4 * 14px) / 5)), 1fr));
   gap: 14px;
   margin-bottom: 25px;
 }

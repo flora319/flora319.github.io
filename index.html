@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,10 +22,10 @@
   </script>
 
   <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <!-- Font Awesome Icon - CSS-->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles (Activities 2-5 + palette) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <!-- Custom Styles (Activities 2-5 + colour palette) -->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <!-- Portfolio polish: tags, project search, highlights, footer, mobile layout -->
   <link rel="stylesheet" href="/assets/css/enhancements.css" />
@@ -42,8 +42,24 @@
   <meta name="author" content="Flora Xuan" />
   <meta name="description" content="Portfolio of Flora Xuan, Computer Engineering student at the University of Toronto." />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
-  <meta name="theme-color" content="#425066" />
+  <meta name="theme-color" content="#46557a" />
   <meta name="robots" content="index, follow" />
+  <!-- Structured data: helps search engines show name, school and profiles -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Flora Xuan",
+      "url": "https://flora319.github.io/",
+      "image": "https://flora319.github.io/assets/img/profile.jpg",
+      "jobTitle": "Computer Engineering Student",
+      "email": "mailto:flora.xuan319@gmail.com",
+      "telephone": "+1-647-633-4756",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Toronto" },
+      "knowsAbout": ["Retrieval-augmented generation", "Machine learning", "Test automation", "C++", "Python", "FPGA"],
+      "sameAs": ["https://github.com/flora319", "https://www.linkedin.com/in/florax19"]
+    }
+  </script>
 </head>
 
 <body>
@@ -159,21 +175,21 @@
         <div class="col-md-9">
           <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div class="caption">
-              <p class="eyebrow">Hello, 你好 &middot; Toronto, Canada</p>
+              <p class="eyebrow">Toronto, Canada</p>
               <h2>Hi, I'm <span class="theme">Flora Xuan.</span></h2>
               <h5 class="typing-line">I build <span class="typing"></span></h5>
               <h5>Computer Engineering student at the University of Toronto who enjoys building software that is useful, clear, and well tested.</h5>
             </div>
             <div class="social">
               <a href="https://www.linkedin.com/in/florax19" target="_blank" rel="noopener" aria-label="Flora on LinkedIn">
-                <button class="icon-btn linkedin" tabindex="-1" aria-hidden="true">
+                <span class="icon-btn linkedin" aria-hidden="true">
                   <i class="fa fa-linkedin"></i>
-                </button>
+                </span>
               </a>
               <a href="https://github.com/flora319" target="_blank" rel="noopener" aria-label="Flora on GitHub">
-                <button class="icon-btn github" tabindex="-1" aria-hidden="true">
+                <span class="icon-btn github" aria-hidden="true">
                   <i class="fa fa-github"></i>
-                </button>
+                </span>
               </a>
             </div>
             <div class='buttons'>
@@ -367,56 +383,75 @@
     <section id="places" class="section scrollspy">
       <h3 class="page-title white-text theme">Places Travelled</h3>
       <div class="container">
-        <p class="places-intro">A few places I have explored so far. Click a card to see it on the map.</p>
+        <p class="places-intro">Countries I have explored so far. Click a card to see it on the map.</p>
 
+        <!-- Filled in by places.js, which counts the cards below -->
         <div class="places-stats">
-          <div class="stat"><span class="stat-number">6</span>places</div>
-          <div class="stat"><span class="stat-number">4</span>continents</div>
+          <div class="stat"><span class="stat-number" id="country-count">9</span>countries</div>
+          <div class="stat"><span class="stat-number" id="continent-count">4</span>continents</div>
         </div>
 
         <div class="place-grid">
           <button type="button" class="place-card active" aria-pressed="true"
-            data-name="France" data-query="France" data-zoom="5">
-            <span class="place-flag" aria-hidden="true">🇫🇷</span>
-            <span class="place-name">France</span>
-            <span class="place-note">Europe</span>
+            data-name="China" data-query="China" data-zoom="4" data-continent="Asia">
+            <span class="place-flag" aria-hidden="true">🇨🇳</span>
+            <span class="place-name">China</span>
+            <span class="place-note">Asia</span>
           </button>
           <button type="button" class="place-card" aria-pressed="false"
-            data-name="Spain" data-query="Spain" data-zoom="5">
-            <span class="place-flag" aria-hidden="true">🇪🇸</span>
-            <span class="place-name">Spain</span>
-            <span class="place-note">Europe</span>
-          </button>
-          <button type="button" class="place-card" aria-pressed="false"
-            data-name="Costa Rica" data-query="Costa Rica" data-zoom="7">
-            <span class="place-flag" aria-hidden="true">🇨🇷</span>
-            <span class="place-name">Costa Rica</span>
-            <span class="place-note">Central America</span>
-          </button>
-          <button type="button" class="place-card" aria-pressed="false"
-            data-name="Alaska" data-query="Alaska, USA" data-zoom="4">
-            <span class="place-flag" aria-hidden="true">🇺🇸</span>
-            <span class="place-name">Alaska</span>
-            <span class="place-note">North America</span>
-          </button>
-          <button type="button" class="place-card" aria-pressed="false"
-            data-name="Japan" data-query="Japan" data-zoom="5">
+            data-name="Japan" data-query="Japan" data-zoom="5" data-continent="Asia">
             <span class="place-flag" aria-hidden="true">🇯🇵</span>
             <span class="place-name">Japan</span>
             <span class="place-note">Asia</span>
           </button>
           <button type="button" class="place-card" aria-pressed="false"
-            data-name="New Zealand" data-query="New Zealand" data-zoom="5">
+            data-name="Thailand" data-query="Thailand" data-zoom="5" data-continent="Asia">
+            <span class="place-flag" aria-hidden="true">🇹🇭</span>
+            <span class="place-name">Thailand</span>
+            <span class="place-note">Asia</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="United States" data-query="United States" data-zoom="3" data-continent="North America">
+            <span class="place-flag" aria-hidden="true">🇺🇸</span>
+            <span class="place-name">United States</span>
+            <span class="place-note">North America</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Cuba" data-query="Cuba" data-zoom="6" data-continent="North America">
+            <span class="place-flag" aria-hidden="true">🇨🇺</span>
+            <span class="place-name">Cuba</span>
+            <span class="place-note">Caribbean</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Costa Rica" data-query="Costa Rica" data-zoom="7" data-continent="North America">
+            <span class="place-flag" aria-hidden="true">🇨🇷</span>
+            <span class="place-name">Costa Rica</span>
+            <span class="place-note">Central America</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="France" data-query="France" data-zoom="5" data-continent="Europe">
+            <span class="place-flag" aria-hidden="true">🇫🇷</span>
+            <span class="place-name">France</span>
+            <span class="place-note">Europe</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Spain" data-query="Spain" data-zoom="5" data-continent="Europe">
+            <span class="place-flag" aria-hidden="true">🇪🇸</span>
+            <span class="place-name">Spain</span>
+            <span class="place-note">Europe</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="New Zealand" data-query="New Zealand" data-zoom="5" data-continent="Oceania">
             <span class="place-flag" aria-hidden="true">🇳🇿</span>
             <span class="place-name">New Zealand</span>
             <span class="place-note">Oceania</span>
           </button>
         </div>
 
-        <p class="map-label">Currently showing: <b id="map-label">France</b></p>
+        <p class="map-label">Currently showing: <b id="map-label">China</b></p>
         <div class="map-wrapper">
           <iframe id="places-map" title="Google map of places I have travelled"
-            src="https://www.google.com/maps?q=France&amp;z=5&amp;output=embed"
+            src="https://www.google.com/maps?q=China&amp;z=4&amp;output=embed"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
@@ -433,6 +468,11 @@
           <a href="mailto:flora.xuan319@gmail.com" class="hoverline">flora.xuan319@gmail.com</a>
         </p>
         <p>
+          <a aria-label="Call Flora" href="tel:+16476334756"
+            class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-phone"></i></a>
+          <a href="tel:+16476334756" class="hoverline">+1 (647) 633-4756</a>
+        </p>
+        <p>
           <a aria-label="View Flora on GitHub" href="https://github.com/flora319" target="_blank" rel="noopener"
             class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-github"></i></a>
           <a href="https://github.com/flora319" class="hoverline" target="_blank" rel="noopener">github.com/flora319</a>
@@ -442,20 +482,16 @@
             class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-linkedin"></i></a>
           <a href="https://www.linkedin.com/in/florax19" class="hoverline" target="_blank" rel="noopener">linkedin.com/in/florax19</a>
         </p>
+        <p>
+          <a aria-label="Open Flora's resume (PDF) in a new tab" href="/assets/resume/Flora_Xuan_Resume.pdf" target="_blank"
+            class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-file-text"></i></a>
+          <a href="/assets/resume/Flora_Xuan_Resume.pdf" class="hoverline" target="_blank">Resume (PDF)</a>
+        </p>
       </div>
     </section>
 
-    <!-- Footer (Activity 6): palette credits -->
+    <!-- Footer -->
     <footer class="site-footer">
-      <p class="palette-title">Colours inspired by traditional Chinese pigments</p>
-      <ul class="palette">
-        <li><span class="swatch" style="background: var(--dai-lan)"></span>黛蓝 <em>dài lán</em></li>
-        <li><span class="swatch" style="background: var(--tian-shui-bi)"></span>天水碧 <em>tiān shuǐ bì</em></li>
-        <li><span class="swatch" style="background: var(--hai-tang-hong)"></span>海棠红 <em>hǎi táng hóng</em></li>
-        <li><span class="swatch" style="background: var(--yan-zhi)"></span>胭脂 <em>yān zhī</em></li>
-        <li><span class="swatch" style="background: var(--yue-bai)"></span>月白 <em>yuè bái</em></li>
-        <li><span class="swatch" style="background: var(--ou-he)"></span>藕荷 <em>ǒu hé</em></li>
-      </ul>
       <p class="copyright">&copy; 2026 Flora Xuan &middot; Built with HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</p>
     </footer>
   </main>

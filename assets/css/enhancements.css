@@ -25,7 +25,8 @@ body {
 }
 
 nav,
-.side-nav {
+.side-nav,
+ul.side-nav.fixed {  /* Materialize paints the fixed sidebar white with a more specific rule */
   background-color: var(--surface);
 }
 
@@ -114,6 +115,25 @@ ul.table-of-contents li:not(.logo) a:hover {
 #intro .typed-cursor {
   color: var(--accent-text) !important;
   font-weight: 400;
+}
+
+/* The icons are <span>s inside the links (a <button> inside an <a> is invalid HTML) */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 26px;
+}
+
+.social a:focus-visible .icon-btn {
+  outline: 3px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+/* style.css gives all intro text a blurry drop shadow; crisp text reads better on the light background */
+#intro.section .container *:not(span) {
+  text-shadow: none;
 }
 
 .icon-btn,
@@ -241,6 +261,26 @@ ul.table-of-contents li:not(.logo) a:hover {
   border-radius: 6px;
   color: var(--accent-text);
   font-size: 13px;
+}
+
+/* Cards in the same row share a height, so a tall card never pushes the next one sideways */
+#project-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#project-list > .col {
+  display: flex;
+}
+
+#project-list .project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#project-list .project-card .card-content {
+  flex: 1;
 }
 
 .project-card .card-title {
@@ -484,37 +524,6 @@ ul.table-of-contents li:not(.logo) a:hover {
   font-size: 14px;
 }
 
-.palette-title {
-  margin: 0 0 12px;
-  letter-spacing: 0.05em;
-}
-
-.palette {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px 22px;
-  margin: 0 0 16px;
-}
-
-.palette li {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.palette em {
-  font-size: 12px;
-}
-
-.swatch {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-}
-
 .copyright {
   margin: 0;
   font-size: 13px;
@@ -552,10 +561,15 @@ ul.table-of-contents li:not(.logo) a:hover {
     font-size: 1.15rem;
   }
 
-  .buttons a {
+  /* The extra .container beats style.css's "#intro .container *:not(span) { padding: 0 }" */
+  #intro.section .container .buttons a {
     display: inline-block;
     margin: 10px 8px 0 0;
     padding: 10px 24px;
+  }
+
+  #intro.section .container .status {
+    padding: 6px 16px;
   }
 
   h3.page-title {

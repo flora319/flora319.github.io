@@ -29,3 +29,11 @@ placeCards.forEach(function (card) {
     showPlace(card);
   });
 });
+
+// Count the cards so the stats stay right when a place is added
+const continents = new Set();
+placeCards.forEach(function (card) {
+  continents.add(card.dataset.continent);
+});
+document.getElementById("country-count").textContent = placeCards.length;
+document.getElementById("continent-count").textContent = continents.size;
