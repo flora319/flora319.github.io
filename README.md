@@ -11,10 +11,13 @@ This site introduces my experience, projects, skills, education, and places I ha
 
 ## Features
 
-- **Traditional Soft colour palette:** 
-- **Dark mode:** a toggle button that remembers your choice and follows your system setting on a first visit
-- **Projects from a JavaScript array:** two projects at first, with a Load More button for the rest
+- **Soft colour palette:**
+- **Dark mode:** a toggle that remembers your choice and follows your system setting on a first visit
+- **Projects from a JavaScript array:** Load More, filters by area (AI / ML, Software, Hardware & Embedded),
+  live search, clickable skill tags, and expandable details
 - **Places Travelled:** click a destination card to move the embedded Google map there
+- **Mobile friendly and accessible:** responsive layout, keyboard focus outlines,
+  WCAG AA colour contrast in both themes, respects "reduce motion"
 
 ## Built with
 
@@ -24,12 +27,13 @@ Font Awesome, and GitHub Pages.
 ## Project structure
 
 ```
-index.html                page content
-assets/css/style.css      main styles and colour palette
-assets/css/dark-mode.css  dark mode styles
-assets/js/projects.js     project data and Load More
-assets/js/places.js       travel map switcher
-assets/js/theme-toggle.js dark mode toggle
+index.html                  page content
+assets/css/style.css        main styles and colour palette
+assets/css/enhancements.css tags, search, highlights, footer, mobile layout
+assets/css/dark-mode.css    dark mode
+assets/js/projects.js       project data, Load More, filters, search
+assets/js/places.js         travel map switcher
+assets/js/theme-toggle.js   dark mode toggle
 ```
 
 ## Run locally

@@ -10,6 +10,15 @@
   --accent-dark: #9d2933;   /* 胭脂 yān zhī, rouge: name highlight, typing text */
   --blush: #e4c6d0;         /* 藕荷 ǒu hé, lotus-root pink: intro, photo ring */
   --paper: #fffbf0;         /* 象牙白 xiàng yá bái, ivory: page background */
+
+  /* Neutral colours for cards, text and borders (dark-mode.css swaps these too) */
+  --surface: #ffffff;       /* cards, sidebar */
+  --surface-2: #faf6ee;     /* card footers, sidebar photo area */
+  --border: #e8e1d3;
+  --text: #2f3542;
+  --text-muted: #5f6673;
+  --theme-hover: #333e50;   /* hover colour for solid 黛蓝 buttons */
+  --accent-text: #9d2933;   /* accent-coloured text (胭脂 in light mode) */
 }
 
 .profile-pic {
