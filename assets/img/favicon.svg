@@ -1,5 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="14" fill="#425066"/>
-  <circle cx="50" cy="14" r="6" fill="#db5a6b"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" fill="#fffbf0">FX</text>
+  <!-- Four-leaf clover: one heart-shaped leaf drawn at four 90-degree turns;
+       the blue outline leaves a thin gap so each leaf reads on its own -->
+  <g transform="translate(46 17)">
+    <g fill="#db5a6b" stroke="#425066" stroke-width="1.3" stroke-linejoin="round">
+      <path id="leaf" d="M0 0C-5.2-2.6-7.6-7.2-5.1-9.8C-3.2-11.7-0.7-10.8 0-8.6C0.7-10.8 3.2-11.7 5.1-9.8C7.6-7.2 5.2-2.6 0 0Z" transform="rotate(45)"/>
+      <use href="#leaf" transform="rotate(90)"/>
+      <use href="#leaf" transform="rotate(180)"/>
+      <use href="#leaf" transform="rotate(270)"/>
+    </g>
+    <path d="M0 2Q1.6 7.5 -1.2 12.5" fill="none" stroke="#db5a6b" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <text x="25" y="50" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#fffbf0">FX</text>
 </svg>
