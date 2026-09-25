@@ -13,6 +13,7 @@ html[data-theme="dark"] {
   --theme-hover: #6b7aa6;   /* hover colour for solid buttons */
   --blush: #3a2b3a;         /* dusky rose: intro gradient, photo ring */
   --name-bg: #b8434f;       /* box behind the name */
+  --sage-mist: #1f3431;     /* deep sage: where the intro gradient ends */
   --paper: #1a1c26;         /* night: page background */
   --accent-text: #efc9d2;   /* soft pink: accent text on dark */
 

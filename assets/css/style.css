@@ -8,7 +8,8 @@
   --theme-light: #e7ecf6;   /* mist: tags, soft backgrounds */
   --accent: #db5a6b;        /* rose: borders and small details */
   --accent-dark: #9d2933;   /* deep rose: typing text */
-  --name-bg: #bf4a5a;       /* lighter rose: box behind the name */
+  --name-bg: #c45a68;       /* soft rose: box behind the name */
+  --sage-mist: #dcebe6;     /* soft sage: where the intro gradient ends */
   --blush: #f1e2e7;         /* soft pink: intro, photo ring */
   --paper: #faf9f6;         /* warm white: page background */
 
@@ -345,7 +346,8 @@ h3 {
 
 #intro.section {
   /* ivory -> lotus pink -> moon white */
-  background: linear-gradient(135deg, var(--paper) 0%, var(--blush) 60%, var(--theme-light) 100%);
+  /* Pink in the top-left corner fading through warm white into sage, so the screen is never all pink */
+  background: linear-gradient(135deg, var(--blush) 0%, var(--paper) 45%, var(--sage-mist) 100%);
   position: relative;
 }
 
