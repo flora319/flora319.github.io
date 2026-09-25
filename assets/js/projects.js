@@ -54,18 +54,20 @@ const projects = [
   },
   {
     title: "MergeLens",
-    role: "Team project (Team Lumify) · ECE444 Software Engineering",
-    categories: ["software"],
-    description: "A group-photo editor where each person controls the edits to their own face.",
-    metrics: ["Team of 4", "Scrum", "In progress"],
+    role: "Integration Lead & ML Developer · ECE444 Software Engineering",
+    categories: ["ai", "software"],
+    description: "A collaborative group-photo editor: each person edits only their own face, and every change is versioned like Git, with commits, branches, merge, and revert.",
+    metrics: ["Face detection & editing owner", "Team of 4", "In progress"],
     details: [
-      "Represent the face-subject (participant) user group in requirements.",
-      "Wrote the project goal for the team's requirements document.",
-      "Authored the requirements for face claiming (confirmed by the photo owner) and face-detection speed.",
-      "Review teammates' requirements and close issues after merge in a GitHub-based Scrum workflow."
+      "Own the face detection and editing pipeline, and integrate it with the editor and versioning services.",
+      "Detecting faces and landmarks with MediaPipe Face Landmarker, with a manual face box as a fallback for missed faces.",
+      "Generating skin-only face masks from landmarks, then applying edits (brightness, contrast, smoothing, sharpening, colour tone, blemish removal) inside each mask with OpenCV.",
+      "Defining the shared face data format and a placeholder API in Sprint 1, so teammates are never blocked waiting on the ML work.",
+      "Designing accuracy and latency metrics with reference-image tests for detection and editing.",
+      "Wrote the team workflow and the face-claiming and detection-speed requirements; working in 2-week Scrum sprints with reviewed pull requests and CI."
     ],
-    tools: ["Requirements Engineering", "User Stories", "Agile / Scrum", "GitHub"],
-    dates: "Fall 2026"
+    tools: ["Python", "MediaPipe", "OpenCV", "Computer Vision", "Agile / Scrum", "GitHub"],
+    dates: "Sep 2026 - Present"
   },
   {
     title: "Interactive Map (GIS)",
@@ -102,7 +104,7 @@ const projects = [
     description: "The site you are on: a responsive portfolio with dark mode, project filters and search, and an interactive travel map.",
     metrics: ["Dark mode", "Live search", "WCAG AA contrast"],
     details: [
-      "Colour palette built from traditional Chinese colours, defined once as CSS variables.",
+      "A soft slate, sage, and rose colour palette, defined once as CSS variables.",
       "Dark mode that follows the system setting and remembers the visitor's choice.",
       "Projects rendered from a JavaScript array with Load More, category filters, and search.",
       "Deployed with GitHub Pages."
@@ -115,7 +117,7 @@ const projects = [
 
 const CATEGORY_NAMES = { all: "All", ai: "AI / ML", software: "Software", hardware: "Hardware & Embedded" };
 
-const INITIAL_COUNT = 2;          // how many projects to show at first
+const INITIAL_COUNT = 4;          // how many projects to show at first (two full rows)
 let visibleCount = INITIAL_COUNT; // how many are showing right now (with no filter or search)
 let activeCategory = "all";       // which filter button is selected
 
@@ -246,4 +248,4 @@ projectList.addEventListener("click", function (event) {
   searchInput.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
-renderProjects(); // show the first two when the page loads
+renderProjects(); // show the first few when the page loads
