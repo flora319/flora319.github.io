@@ -387,21 +387,51 @@
 
         <!-- Filled in by places.js, which counts the cards below -->
         <div class="places-stats">
-          <div class="stat"><span class="stat-number" id="country-count">9</span>countries</div>
+          <div class="stat"><span class="stat-number" id="country-count">10</span>countries</div>
           <div class="stat"><span class="stat-number" id="continent-count">4</span>continents</div>
         </div>
 
         <div class="place-grid">
           <button type="button" class="place-card active" aria-pressed="true"
-            data-name="China" data-query="China" data-zoom="4" data-continent="Asia">
-            <span class="place-flag" aria-hidden="true">🇨🇳</span>
-            <span class="place-name">China</span>
-            <span class="place-note">Asia</span>
+            data-name="France" data-query="France" data-zoom="5" data-continent="Europe">
+            <span class="place-flag" aria-hidden="true">🇫🇷</span>
+            <span class="place-name">France</span>
+            <span class="place-note">Europe</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Italy" data-query="Italy" data-zoom="5" data-continent="Europe">
+            <span class="place-flag" aria-hidden="true">🇮🇹</span>
+            <span class="place-name">Italy</span>
+            <span class="place-note">Europe</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="United States" data-query="United States" data-zoom="3" data-continent="North America">
+            <span class="place-flag" aria-hidden="true">🇺🇸</span>
+            <span class="place-name">United States</span>
+            <span class="place-note">North America</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="New Zealand" data-query="New Zealand" data-zoom="5" data-continent="Oceania">
+            <span class="place-flag" aria-hidden="true">🇳🇿</span>
+            <span class="place-name">New Zealand</span>
+            <span class="place-note">Oceania</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="Costa Rica" data-query="Costa Rica" data-zoom="7" data-continent="North America">
+            <span class="place-flag" aria-hidden="true">🇨🇷</span>
+            <span class="place-name">Costa Rica</span>
+            <span class="place-note">Central America</span>
           </button>
           <button type="button" class="place-card" aria-pressed="false"
             data-name="Japan" data-query="Japan" data-zoom="5" data-continent="Asia">
             <span class="place-flag" aria-hidden="true">🇯🇵</span>
             <span class="place-name">Japan</span>
+            <span class="place-note">Asia</span>
+          </button>
+          <button type="button" class="place-card" aria-pressed="false"
+            data-name="China" data-query="China" data-zoom="4" data-continent="Asia">
+            <span class="place-flag" aria-hidden="true">🇨🇳</span>
+            <span class="place-name">China</span>
             <span class="place-note">Asia</span>
           </button>
           <button type="button" class="place-card" aria-pressed="false"
@@ -411,28 +441,10 @@
             <span class="place-note">Asia</span>
           </button>
           <button type="button" class="place-card" aria-pressed="false"
-            data-name="United States" data-query="United States" data-zoom="3" data-continent="North America">
-            <span class="place-flag" aria-hidden="true">🇺🇸</span>
-            <span class="place-name">United States</span>
-            <span class="place-note">North America</span>
-          </button>
-          <button type="button" class="place-card" aria-pressed="false"
             data-name="Cuba" data-query="Cuba" data-zoom="6" data-continent="North America">
             <span class="place-flag" aria-hidden="true">🇨🇺</span>
             <span class="place-name">Cuba</span>
             <span class="place-note">Caribbean</span>
-          </button>
-          <button type="button" class="place-card" aria-pressed="false"
-            data-name="Costa Rica" data-query="Costa Rica" data-zoom="7" data-continent="North America">
-            <span class="place-flag" aria-hidden="true">🇨🇷</span>
-            <span class="place-name">Costa Rica</span>
-            <span class="place-note">Central America</span>
-          </button>
-          <button type="button" class="place-card" aria-pressed="false"
-            data-name="France" data-query="France" data-zoom="5" data-continent="Europe">
-            <span class="place-flag" aria-hidden="true">🇫🇷</span>
-            <span class="place-name">France</span>
-            <span class="place-note">Europe</span>
           </button>
           <button type="button" class="place-card" aria-pressed="false"
             data-name="Spain" data-query="Spain" data-zoom="5" data-continent="Europe">
@@ -440,18 +452,12 @@
             <span class="place-name">Spain</span>
             <span class="place-note">Europe</span>
           </button>
-          <button type="button" class="place-card" aria-pressed="false"
-            data-name="New Zealand" data-query="New Zealand" data-zoom="5" data-continent="Oceania">
-            <span class="place-flag" aria-hidden="true">🇳🇿</span>
-            <span class="place-name">New Zealand</span>
-            <span class="place-note">Oceania</span>
-          </button>
         </div>
 
-        <p class="map-label">Currently showing: <b id="map-label">China</b></p>
+        <p class="map-label">Currently showing: <b id="map-label">France</b></p>
         <div class="map-wrapper">
           <iframe id="places-map" title="Google map of places I have travelled"
-            src="https://www.google.com/maps?q=China&amp;z=4&amp;output=embed"
+            src="https://www.google.com/maps?q=France&amp;z=5&amp;output=embed"
             loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
