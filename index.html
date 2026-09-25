@@ -3,66 +3,53 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <!-- Activity 6 (mobile): the original was missing the comma, so some phones ignored initial-scale -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Activity 6 (dark mode): choose the theme BEFORE the page appears,
-       so dark-mode visitors don't see a white flash. Uses the saved choice,
-       otherwise the computer's own light/dark setting. -->
+  <!-- Activity 6 (dark mode): apply the saved or system theme BEFORE the page paints,
+       so dark-mode visitors never see a white flash while the page loads. -->
   <script>
     (function () {
       var theme = "light";
       try {
         var saved = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         theme = saved || (prefersDark ? "dark" : "light");
-      } catch (e) {}
+      } catch (e) { /* storage blocked: stay light */ }
       document.documentElement.setAttribute("data-theme", theme);
     })();
   </script>
-
 
   <!-- Materialize - Compiled and minified CSS-->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
   <!-- Font Awesome Icon - CSS-->
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles-->
+  <!-- Custom Styles (Activities 2-5 + palette) -->
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <!-- Activity 6: dark mode styles (loaded after style.css so they win) -->
+  <!-- Portfolio polish: tags, project search, highlights, footer, mobile layout -->
+  <link rel="stylesheet" href="/assets/css/enhancements.css" />
+  <!-- Activity 6: dark mode styles (loaded last so they win) -->
   <link rel="stylesheet" href="/assets/css/dark-mode.css" />
-  <title>Flora Xuan | Portfolio</title>
+  <title>Flora Xuan | Computer Engineering · AI &amp; Software</title>
 
   <!-- Open Graph (link previews when the URL is shared) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Flora Xuan | Portfolio" />
-  <meta property="og:description" content="Personal portfolio of Flora Xuan" />
+  <meta property="og:title" content="Flora Xuan | Computer Engineering · AI &amp; Software" />
+  <meta property="og:description" content="Computer Engineering student at the University of Toronto building AI systems, test automation, and thoughtful software." />
   <meta property="og:url" content="https://flora319.github.io/" />
+  <meta property="og:image" content="https://flora319.github.io/assets/img/profile.jpg" />
   <meta name="author" content="Flora Xuan" />
-  <meta name="description" content="Personal portfolio of Flora Xuan" />
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
+  <meta name="description" content="Portfolio of Flora Xuan, Computer Engineering student at the University of Toronto." />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
   <meta name="theme-color" content="#425066" />
   <meta name="robots" content="index, follow" />
 </head>
 
 <body>
-  
+
   <!-- Navigation Menu-->
-  <!-- Nav class 1 -->
+  <!-- Nav class 1: desktop sidebar -->
   <nav class="hide-on-small-only">
     <ul class="side-nav fixed section table-of-contents">
 
@@ -82,64 +69,34 @@
           class="waves-effect waves-dark theme-text"><i
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
-
       <li class="bold">
-        <!-- mdi-av-web small
-             mdi-av-my-library-books small-->
         <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark theme-text"><i
             class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
-
       <li class="bold">
-        <!--
-        ICONS:
-        mdi-action-assessment
-        mdi-social-poll
-        mdi-av-equalizer
-        -->
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark theme-text"><i
             class="mdi-action-assessment small"></i><span>Skills</span></a>
       </li>
-      
       <li class="bold">
-        <!--
-        ICONS:
-        -->
         <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark theme-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
       </li>
-
       <li class="bold">
         <a aria-label="Navigate to the Places Travelled section" href="#places" class="waves-effect waves-dark theme-text"><i
             class="mdi-maps-place small"></i><span>Places Travelled</span></a>
       </li>
-
       <li class="bold">
-        <!-- 
-        1. mdi-communication-contacts
-        2. mdi-content-mail
-        3. mdi-communication-email
-        -->
         <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark theme-text"><i
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
-
       <li class="bold">
-        <!--
-        ICONS:
-        1. mdi-action-description
-        2. mdi-file-folder
-        3. mdi-file-folder-open
-        4. mdi-file-attachment
-        5. mdi-file-folder-shared
-        -->
         <a aria-label="Open Flora's resume in a new tab" href="/assets/resume/Flora_Xuan_Resume.pdf" target="_blank"
-        class="waves-effect waves-dark theme-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
+          class="waves-effect waves-dark theme-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
     </ul>
   </nav>
 
-  <!-- Nav class 2 -->
+  <!-- Nav class 2: mobile top bar -->
   <nav class="hide-on-large only trigger z-depth-1">
     <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
       class="button-collapse"><i class="mdi-navigation-menu"></i></a>
@@ -149,7 +106,7 @@
     </div>
   </nav>
 
-  <!-- Nav class 3 -->
+  <!-- Nav class 3: mobile slide-out menu -->
   <nav class="hide-on-large only">
     <ul id="slide-out" class="side-nav">
       <li class="bold">
@@ -169,7 +126,6 @@
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark theme-text"><i
             class="mdi-action-assessment small"></i><span>Skills</span></a>
       </li>
-
       <li class="bold">
         <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark theme-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
@@ -183,47 +139,48 @@
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
       <li class="bold">
-        <a aria-label="Open Flora's resume in a new tab"
-          href="/assets/resume/Flora_Xuan_Resume.pdf" target="_blank"
+        <a aria-label="Open Flora's resume in a new tab" href="/assets/resume/Flora_Xuan_Resume.pdf" target="_blank"
           class="waves-effect waves-dark theme-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
       </li>
     </ul>
   </nav>
 
-  <!-- Activity 6: floating light/dark mode switch -->
-  <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode">
+  <!-- Activity 6 (dark mode): floating light/dark switch -->
+  <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark mode" title="Toggle dark mode">
     <i class="fa fa-moon-o" aria-hidden="true"></i>
   </button>
 
   <!-- Main Content-->
   <main>
-    <!-- First Section: Heading lines and image -->
+    <!-- First Section: Intro -->
     <section id="intro" class="section scrollspy full-height">
       <div class="overlay"></div>
       <div class="container">
         <div class="col-md-9">
           <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
             <div class="caption">
+              <p class="eyebrow">Hello, 你好 &middot; Toronto, Canada</p>
               <h2>Hi, I'm <span class="theme">Flora Xuan.</span></h2>
-              <h5 style="color:#fff">A <span class="typing" style="font-weight: 300; color: var(--theme-light)"></span></h5>
+              <h5 class="typing-line">I build <span class="typing"></span></h5>
               <h5>Computer Engineering student at the University of Toronto who enjoys building software that is useful, clear, and well tested.</h5>
             </div>
             <div class="social">
-              <a href="https://www.linkedin.com/in/florax19" target="_blank">
-                <button class="icon-btn linkedin">
+              <a href="https://www.linkedin.com/in/florax19" target="_blank" rel="noopener" aria-label="Flora on LinkedIn">
+                <button class="icon-btn linkedin" tabindex="-1" aria-hidden="true">
                   <i class="fa fa-linkedin"></i>
                 </button>
               </a>
-              <a href="https://github.com/flora319" target="_blank">
-                <button class="icon-btn github">
+              <a href="https://github.com/flora319" target="_blank" rel="noopener" aria-label="Flora on GitHub">
+                <button class="icon-btn github" tabindex="-1" aria-hidden="true">
                   <i class="fa fa-github"></i>
                 </button>
               </a>
             </div>
             <div class='buttons'>
-              <a href="#about" class="readme">Read More</a>
-              <a href="#contact" class="contactme">Contact Me</a>
+              <a href="#projects" class="readme">View My Work</a>
+              <a href="/assets/resume/Flora_Xuan_Resume.pdf" target="_blank" class="contactme">Resume</a>
             </div>
+            <p class="status"><span class="status-dot" aria-hidden="true"></span>Open to software, AI, and validation opportunities</p>
           </div>
         </div>
       </div>
@@ -235,8 +192,9 @@
       <div class="container flow-text">
         <p>
           I am a Computer Engineering student at the University of Toronto, with a minor in Artificial
-          Intelligence Engineering. I enjoy turning ideas into working software, from test automation
-          and databases to AI systems built on retrieval-augmented generation.
+          Intelligence Engineering. I enjoy turning ideas into working systems, from AI tools built on
+          retrieval-augmented generation and deep learning, to test automation and C++ applications,
+          down to games running on FPGA hardware.
         </p>
         <p>
           During my co-op on AMD's Multimedia Drivers team, I led a video-quality automation tool that was
@@ -245,9 +203,28 @@
         <p>
           I am looking for opportunities to grow as a developer through internships, projects, and collaboration.
         </p>
+
+        <!-- At a glance: the numbers a recruiter should see first -->
+        <div class="glance-grid">
+          <div class="glance">
+            <span class="glance-number">12 months</span>
+            <span class="glance-label">co-op on AMD's Multimedia Drivers team</span>
+          </div>
+          <div class="glance">
+            <span class="glance-number">Top 50</span>
+            <span class="glance-label">AMD Canada 2024 Innovation Showcase</span>
+          </div>
+          <div class="glance">
+            <span class="glance-number">0.87</span>
+            <span class="glance-label">faithfulness score for my RAG chatbot</span>
+          </div>
+          <div class="glance">
+            <span class="glance-number">~85%</span>
+            <span class="glance-label">faster load and run time on a C++ GIS app</span>
+          </div>
+        </div>
       </div>
     </section>
-
 
     <!-- Third Section: Experience -->
     <section id="experience" class="section scrollspy">
@@ -256,15 +233,17 @@
 
         <div class="card">
           <div class="card-content">
-            <span class="card-title"><a href="https://www.amd.com/" target="_blank"
+            <span class="card-title"><a href="https://www.amd.com/" target="_blank" rel="noopener"
                 class="theme-text hoverline">AMD (ATI Technologies ULC)</a></span>
             <div class="role brown-text text-darken-2">Multimedia Drivers Team Co-op</div>
             <ul>
               <li>Served as tech lead for the Video Quality (VQ) Automation tool, selected as a top-50 project for AMD Canada's 2024 Innovation Showcase.</li>
               <li>Maintained and upgraded the multimedia-driver test farm, set up a new MySQL database, and optimized plot server algorithms.</li>
               <li>Supported multimedia-driver validation by debugging and evaluating video quality for internal engineering requests.</li>
-              <li><b>Tools:</b> Python, Jenkins, MySQL, Linux</li>
             </ul>
+            <div class="tag-list">
+              <span class="tag">Python</span><span class="tag">Jenkins</span><span class="tag">MySQL</span><span class="tag">Linux</span>
+            </div>
           </div>
           <div class="card-action">
             <span>May 2023 - Apr 2024 | Markham, Canada</span>
@@ -274,10 +253,29 @@
       </div>
     </section>
 
-    <!-- Fourth Section: Projects (Activity 5: filled in by assets/js/projects.js) -->
+    <!-- Fourth Section: Projects (Activity 5: filled in by assets/js/projects.js; Activity 6: search) -->
     <section id="projects" class="section scrollspy">
       <h3 class="page-title white-text theme">Projects</h3>
       <div class="container">
+        <!-- Activity 6: project search -->
+        <div class="project-tools">
+          <div class="filter-chips" role="group" aria-label="Filter projects by area">
+            <button type="button" class="filter-chip active" data-category="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-chip" data-category="ai" aria-pressed="false">AI / ML</button>
+            <button type="button" class="filter-chip" data-category="software" aria-pressed="false">Software</button>
+            <button type="button" class="filter-chip" data-category="hardware" aria-pressed="false">Hardware &amp; Embedded</button>
+          </div>
+          <div class="search-box">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <input type="text" id="project-search" autocomplete="off"
+              placeholder="Search by name or skill, e.g. Python" aria-label="Search projects by name or skill" />
+            <button type="button" id="clear-search" class="clear-search" aria-label="Clear search" hidden>
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p id="project-count" class="project-count" aria-live="polite"></p>
+        </div>
+
         <div id="project-list" class="row"></div>
         <div class="center-align">
           <button type="button" id="load-more-btn" class="btn waves-effect waves-light theme">Load More</button>
@@ -289,61 +287,77 @@
     <section id="skills" class="section scrollspy">
       <h3 class="page-title white-text theme">Skills</h3>
       <div class="container">
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Programming Languages</h4>
-            <p>Python, TypeScript, C++, C, SQL, HTML, VHDL, MATLAB, Assembly</p>
+        <div class="row">
+          <div class="col s12 l6">
+            <div class="card">
+              <div class="card-content">
+                <h4 class="brown-text light">Programming Languages</h4>
+                <div class="tag-list">
+                  <span class="tag">Python</span><span class="tag">C++</span><span class="tag">C</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">HTML</span><span class="tag">MATLAB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 l6">
+            <div class="card">
+              <div class="card-content">
+                <h4 class="brown-text light">AI / Machine Learning</h4>
+                <div class="tag-list">
+                  <span class="tag">RAG</span><span class="tag">LLM Evaluation</span><span class="tag">Prompt Engineering</span><span class="tag">NLP</span><span class="tag">PyTorch</span><span class="tag">CNNs</span><span class="tag">Computer Vision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 l6">
+            <div class="card">
+              <div class="card-content">
+                <h4 class="brown-text light">Software &amp; Cloud</h4>
+                <div class="tag-list">
+                  <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">REST APIs</span><span class="tag">MySQL</span><span class="tag">AWS Bedrock</span><span class="tag">Bedrock Knowledge Bases</span><span class="tag">AWS Lambda</span><span class="tag">API Gateway</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 l6">
+            <div class="card">
+              <div class="card-content">
+                <h4 class="brown-text light">Hardware &amp; Embedded</h4>
+                <div class="tag-list">
+                  <span class="tag">Verilog</span><span class="tag">VHDL</span><span class="tag">FPGA</span><span class="tag">Assembly</span><span class="tag">C</span><span class="tag">Interrupt Handling</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-content">
-            <h4 class="brown-text light">Frameworks &amp; Tools</h4>
-            <p>FastAPI, React, PyTorch, REST APIs, MySQL, Jenkins (CI/CD), Git, Linux, Postman, VS Code</p>
+            <h4 class="brown-text light">Tools &amp; Practices</h4>
+            <div class="tag-list">
+              <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Jenkins (CI/CD)</span><span class="tag">Test Automation</span><span class="tag">Postman</span><span class="tag">VS Code</span><span class="tag">Agile / Scrum</span><span class="tag">Requirements Engineering</span>
+            </div>
           </div>
         </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Cloud</h4>
-            <p>AWS Bedrock, Lambda, API Gateway</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">AI / Machine Learning</h4>
-            <p>RAG, NLP, Prompt Engineering, LLM Evaluation, Computer Vision, CNNs</p>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- Seventh Section: Education -->
+    <!-- Sixth Section: Education -->
     <section id="education" class="section scrollspy">
       <h3 class="page-title white-text theme">Education</h3>
       <div class="container">
         <div class="card">
           <div class="card-content">
-            <span class="card-title"><a href="https://www.utoronto.ca/" target="_blank"
+            <span class="card-title"><a href="https://www.utoronto.ca/" target="_blank" rel="noopener"
                 class="theme-text hoverline">University of Toronto</a></span>
-            <p class="brown-text">St. George Campus, Toronto | Expected January 2027</p>
+            <div class="role brown-text text-darken-2">St. George Campus, Toronto | Expected January 2027</div>
             <p>
               <b>Degree:</b> Bachelor of Applied Science in Computer Engineering<br>
               <b>Minor:</b> Artificial Intelligence Engineering<br>
               <b>Awards:</b> Edward S. Rogers Sr. Admission Scholarship, Dean's Merit Award
             </p>
             <p><b>Relevant Coursework:</b></p>
-            <ul>
-              <li>Deep Learning</li>
-              <li>Artificial Intelligence</li>
-              <li>Databases</li>
-              <li>Computer Networks</li>
-              <li>Algorithms &amp; Data Structures</li>
-              <li>Operating Systems</li>
-            </ul>
+            <div class="tag-list">
+              <span class="tag">Deep Learning</span><span class="tag">Artificial Intelligence</span><span class="tag">Databases</span><span class="tag">Computer Networks</span><span class="tag">Algorithms &amp; Data Structures</span><span class="tag">Operating Systems</span><span class="tag">Software Engineering</span>
+            </div>
           </div>
         </div>
       </div>
@@ -408,40 +422,55 @@
       </div>
     </section>
 
-    <!-- Eight Section: Contact -->
+    <!-- Contact Section -->
     <section id="contact" class="section scrollspy full-height">
       <h3 class="page-title white-text theme">Contact</h3>
       <div class="container">
+        <p class="contact-lead">I'd love to hear about internships, projects, or anything you think I'd enjoy building.</p>
         <p>
           <a aria-label="Email Flora" href="mailto:flora.xuan319@gmail.com"
             class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-envelope"></i></a>
           <a href="mailto:flora.xuan319@gmail.com" class="hoverline">flora.xuan319@gmail.com</a>
         </p>
         <p>
-          <a aria-label="View Flora on GitHub" href="https://github.com/flora319" target="_blank"
+          <a aria-label="View Flora on GitHub" href="https://github.com/flora319" target="_blank" rel="noopener"
             class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-github"></i></a>
-          <a href="https://github.com/flora319" class="hoverline" target="_blank">github.com/flora319</a>
+          <a href="https://github.com/flora319" class="hoverline" target="_blank" rel="noopener">github.com/flora319</a>
         </p>
         <p>
-          <a aria-label="View Flora on LinkedIn" href="https://www.linkedin.com/in/florax19" target="_blank"
+          <a aria-label="View Flora on LinkedIn" href="https://www.linkedin.com/in/florax19" target="_blank" rel="noopener"
             class="btn-floating btn-large waves-effect waves-light blue-grey"><i class="fa fa-linkedin"></i></a>
-          <a href="https://www.linkedin.com/in/florax19" class="hoverline" target="_blank">linkedin.com/in/florax19</a>
+          <a href="https://www.linkedin.com/in/florax19" class="hoverline" target="_blank" rel="noopener">linkedin.com/in/florax19</a>
         </p>
       </div>
     </section>
+
+    <!-- Footer (Activity 6): palette credits -->
+    <footer class="site-footer">
+      <p class="palette-title">Colours inspired by traditional Chinese pigments</p>
+      <ul class="palette">
+        <li><span class="swatch" style="background: var(--dai-lan)"></span>黛蓝 <em>dài lán</em></li>
+        <li><span class="swatch" style="background: var(--tian-shui-bi)"></span>天水碧 <em>tiān shuǐ bì</em></li>
+        <li><span class="swatch" style="background: var(--hai-tang-hong)"></span>海棠红 <em>hǎi táng hóng</em></li>
+        <li><span class="swatch" style="background: var(--yan-zhi)"></span>胭脂 <em>yān zhī</em></li>
+        <li><span class="swatch" style="background: var(--yue-bai)"></span>月白 <em>yuè bái</em></li>
+        <li><span class="swatch" style="background: var(--ou-he)"></span>藕荷 <em>ǒu hé</em></li>
+      </ul>
+      <p class="copyright">&copy; 2026 Flora Xuan &middot; Built with HTML, CSS &amp; JavaScript &middot; Hosted on GitHub Pages</p>
+    </footer>
   </main>
 
   <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="/assets/vendor/typed.js/typed.min.js"></script>
   <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Student", "Developer", "Problem Solver"],
+    var typed = new Typed('.typing', {
+      strings: ["RAG-powered AI tools.", "test automation.", "C++ systems.", "games on FPGA hardware.", "thoughtful web pages."],
       loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
+      typeSpeed: 70,
+      backSpeed: 35,
+      backDelay: 1600
     });
   </script>
-
 
   <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -460,13 +489,14 @@
       })
     })
   </script>
-  <!-- Dark mode toggle (Activity 6) -->
+
+  <!-- Activity 6: dark mode toggle -->
   <script src="/assets/js/theme-toggle.js"></script>
 
-  <!-- Projects rendered from a JavaScript array (Activity 5) -->
+  <!-- Activity 5 + 6: projects from a JavaScript array, with Load More and search -->
   <script src="/assets/js/projects.js"></script>
 
-  <!-- Places Travelled map switcher (Activity 4) -->
+  <!-- Activity 4: Places Travelled map switcher -->
   <script src="/assets/js/places.js"></script>
 </body>
 
