@@ -54,7 +54,7 @@ const projects = [
   },
   {
     title: "MergeLens",
-    role: "Integration Lead & ML Developer · ECE444 Software Engineering",
+    role: "Integration Lead & ML Developer · Software engineering project",
     categories: ["ai", "software"],
     description: "A collaborative group-photo editor: each person edits only their own face, and every change is versioned like Git, with commits, branches, merge, and revert.",
     metrics: ["Face detection & editing owner", "Team of 4", "In progress"],
@@ -104,7 +104,7 @@ const projects = [
     description: "The site you are on: a responsive portfolio with dark mode, project filters and search, and an interactive travel map.",
     metrics: ["Dark mode", "Live search", "WCAG AA contrast"],
     details: [
-      "A soft slate, sage, and rose colour palette, defined once as CSS variables.",
+      "An ink blue, jade, and rose colour palette, defined once as CSS variables.",
       "Dark mode that follows the system setting and remembers the visitor's choice.",
       "Projects rendered from a JavaScript array with Load More, category filters, and search.",
       "Deployed with GitHub Pages."
